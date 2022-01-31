@@ -21,12 +21,12 @@ public class Person {
     private ArrayList<String> seatsNumber;
     private ArrayList<String> licensePlate;
     private String ownerName;
-    private String ownerTelephonenumbers;
-    private String ownerEmailAddresses;
+    private ArrayList<String> ownerTelephonenumber;
+    private ArrayList<String> ownerEmailAddresses;
     private String ownerDriverLicense;
     private String ownerSocialSecurityNumber;
     private String ownerAddress;
-    private String serviceRecords;
+    private ArrayList<String> serviceRecords;
     private String warrantyYear;
     private String photo;
     
