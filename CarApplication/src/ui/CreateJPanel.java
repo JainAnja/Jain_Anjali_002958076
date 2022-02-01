@@ -5,7 +5,7 @@
 package ui;
 
 import javax.swing.JOptionPane;
-import model.Person;
+import model.CarProfile;
 
 /**
  *
@@ -16,10 +16,10 @@ public class CreateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    Person person;
-    public CreateJPanel(Person person) {
+    CarProfile carProfile;
+    public CreateJPanel(CarProfile carProfile) {
         initComponents();
-        this.person = person;
+        this.carProfile = carProfile;
     }
 
     /**
@@ -77,6 +77,12 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         lblOwnerEmail.setText("Owner Email Addresses:");
 
+        txtColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtColorActionPerformed(evt);
+            }
+        });
+
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,35 +98,37 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(lblModel)
-                        .addComponent(lblBrand)
-                        .addComponent(lblColor, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addComponent(lblYear)
-                    .addComponent(lblEngineNo)
-                    .addComponent(lblSeatsNum)
-                    .addComponent(lblLicense)
-                    .addComponent(lblOwnerName)
-                    .addComponent(lblOwnerTele)
-                    .addComponent(lblOwnerEmail))
-                .addGap(95, 95, 95)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtBrand, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
-                    .addComponent(txtModel)
-                    .addComponent(txtColor)
-                    .addComponent(txtYear)
-                    .addComponent(txtEngineNo)
-                    .addComponent(txtSeatsNum)
-                    .addComponent(txtLicense)
-                    .addComponent(txtOwnerName)
-                    .addComponent(txtOwnerTele)
-                    .addComponent(txtOwnerEmail)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnSave)
-                        .addGap(198, 198, 198)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(lblModel)
+                                .addComponent(lblBrand)
+                                .addComponent(lblColor, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(lblYear)
+                            .addComponent(lblEngineNo)
+                            .addComponent(lblSeatsNum)
+                            .addComponent(lblLicense)
+                            .addComponent(lblOwnerName)
+                            .addComponent(lblOwnerTele)
+                            .addComponent(lblOwnerEmail))
+                        .addGap(95, 95, 95)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtBrand, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+                            .addComponent(txtModel)
+                            .addComponent(txtColor)
+                            .addComponent(txtYear)
+                            .addComponent(txtEngineNo)
+                            .addComponent(txtSeatsNum)
+                            .addComponent(txtLicense)
+                            .addComponent(txtOwnerName)
+                            .addComponent(txtOwnerTele)
+                            .addComponent(txtOwnerEmail)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(382, 382, 382)
+                        .addComponent(btnSave)))
+                .addGap(0, 279, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,27 +175,28 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblOwnerEmail)
                     .addComponent(txtOwnerEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                .addGap(53, 53, 53)
                 .addComponent(btnSave)
-                .addContainerGap())
+                .addContainerGap(238, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
         
-        person.setBrand(txtBrand.getText());
-        person.setModel(txtModel.getText());
-        person.setColor(txtColor.getText());
-        person.setYear(txtYear.getText());
-        person.setEngineNo(txtEngineNo.getText());
-        person.setSeatsNumber(txtSeatsNum.getText());
-        person.getLicensePlates().add(txtLicense.getText());
-        person.setOwnerName(txtOwnerName.getText());
-        person.getOwnerTelephonenumbers().add(txtOwnerTele.getText());
-        person.getOwnerEmailAddresses().add(txtOwnerEmail.getText());
+        carProfile.setBrand(txtBrand.getText());
+        carProfile.setModel(txtModel.getText());
+        carProfile.setColor(txtColor.getText());
+        carProfile.setYear(txtYear.getText());
+        carProfile.setEngineNo(txtEngineNo.getText());
+        carProfile.setSeatsNumber(txtSeatsNum.getText());
+        carProfile.getLicensePlates().add(txtLicense.getText());
+        carProfile.setOwnerName(txtOwnerName.getText());
+        carProfile.getOwnerTelephonenumbers().add(txtOwnerTele.getText());
+        carProfile.getOwnerEmailAddresses().add(txtOwnerEmail.getText());
         
-        JOptionPane.showMessageDialog(this, "New profile add.");
+        
+        JOptionPane.showMessageDialog(this, "New car profile added successfully");
         
         txtBrand.setText("");
         txtModel.setText("");
@@ -201,6 +210,10 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtOwnerEmail.setText("");
 
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void txtColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtColorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

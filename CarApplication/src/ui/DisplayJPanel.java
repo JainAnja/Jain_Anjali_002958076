@@ -4,7 +4,9 @@
  */
 package ui;
 
-import model.Person;
+import javax.swing.table.DefaultTableModel;
+import model.CarProfile;
+import model.ServiceRecord;
 
 /**
  *
@@ -15,10 +17,14 @@ public class DisplayJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DisplayJPanel
      */
-    Person person;
-    public DisplayJPanel(Person person) {
+    CarProfile carProfile;
+    
+    public DisplayJPanel(CarProfile carProfile) {
         initComponents();
-        this.person = person;
+        this.carProfile = carProfile;
+        
+        
+        populateTable();
     }
 
     /**
@@ -31,180 +37,79 @@ public class DisplayJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         lblTitle = new javax.swing.JLabel();
-        lblBrand = new javax.swing.JLabel();
-        lblModel = new javax.swing.JLabel();
-        lblColor = new javax.swing.JLabel();
-        lblYear = new javax.swing.JLabel();
-        lblEngineNo = new javax.swing.JLabel();
-        lblSeatNum = new javax.swing.JLabel();
-        lblLicense = new javax.swing.JLabel();
-        lblOwnerName = new javax.swing.JLabel();
-        lblOwnerTele = new javax.swing.JLabel();
-        lblOwnerEmail = new javax.swing.JLabel();
-        txtBrand = new javax.swing.JTextField();
-        txtModel = new javax.swing.JTextField();
-        txtColor = new javax.swing.JTextField();
-        txtYear = new javax.swing.JTextField();
-        txtEngineNo = new javax.swing.JTextField();
-        txtSeatsNum = new javax.swing.JTextField();
-        txtLicense = new javax.swing.JTextField();
-        txtOwnerName = new javax.swing.JTextField();
-        txtOwnerTele = new javax.swing.JTextField();
-        txtOwnerEmail = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDisplay = new javax.swing.JTable();
         btnView = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
 
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Display Car Profile");
 
-        lblBrand.setText("Brand:");
-
-        lblModel.setText("Model:");
-
-        lblColor.setText("Color:");
-
-        lblYear.setText("Year:");
-
-        lblEngineNo.setText("Engine No:");
-
-        lblSeatNum.setText("Seats Number:");
-
-        lblLicense.setText("License Plates:");
-
-        lblOwnerName.setText("Owner Name:");
-
-        lblOwnerTele.setText("Owner TelePhone Number:");
-
-        lblOwnerEmail.setText("Owner Email Addresses:");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDisplay.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Brand", "Model", "Year", "Engine No"
+                "Date", "Charges", "Parts"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblDisplay);
+        if (tblDisplay.getColumnModel().getColumnCount() > 0) {
+            tblDisplay.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         btnView.setText("View");
 
-        btnDelete.setText("Delete");
+        btnDelete.setText("Dalete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(lblModel)
-                                .addComponent(lblBrand)
-                                .addComponent(lblColor, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(lblYear)
-                            .addComponent(lblEngineNo)
-                            .addComponent(lblSeatNum)
-                            .addComponent(lblLicense)
-                            .addComponent(lblOwnerName)
-                            .addComponent(lblOwnerTele)
-                            .addComponent(lblOwnerEmail))
-                        .addGap(95, 95, 95)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtBrand)
-                            .addComponent(txtModel)
-                            .addComponent(txtColor)
-                            .addComponent(txtYear)
-                            .addComponent(txtEngineNo)
-                            .addComponent(txtSeatsNum)
-                            .addComponent(txtLicense)
-                            .addComponent(txtOwnerName)
-                            .addComponent(txtOwnerTele)
-                            .addComponent(txtOwnerEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(195, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnDelete)
-                .addGap(216, 216, 216))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 967, Short.MAX_VALUE)
-                    .addContainerGap()))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 728, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(54, 54, 54))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)
+                                .addComponent(btnDelete)
+                                .addGap(104, 104, 104))))))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnDelete, btnView});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(260, 260, 260)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnView)
                     .addComponent(btnDelete))
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblBrand)
-                    .addComponent(txtBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblModel)
-                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblColor)
-                    .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblYear)
-                    .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEngineNo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEngineNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSeatNum)
-                    .addComponent(txtSeatsNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLicense)
-                    .addComponent(txtLicense, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblOwnerName)
-                    .addComponent(txtOwnerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblOwnerTele)
-                    .addComponent(txtOwnerTele, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblOwnerEmail)
-                    .addComponent(txtOwnerEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(37, 37, 37)
-                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(818, Short.MAX_VALUE)))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -213,27 +118,26 @@ public class DisplayJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnView;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblBrand;
-    private javax.swing.JLabel lblColor;
-    private javax.swing.JLabel lblEngineNo;
-    private javax.swing.JLabel lblLicense;
-    private javax.swing.JLabel lblModel;
-    private javax.swing.JLabel lblOwnerEmail;
-    private javax.swing.JLabel lblOwnerName;
-    private javax.swing.JLabel lblOwnerTele;
-    private javax.swing.JLabel lblSeatNum;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JLabel lblYear;
-    private javax.swing.JTextField txtBrand;
-    private javax.swing.JTextField txtColor;
-    private javax.swing.JTextField txtEngineNo;
-    private javax.swing.JTextField txtLicense;
-    private javax.swing.JTextField txtModel;
-    private javax.swing.JTextField txtOwnerEmail;
-    private javax.swing.JTextField txtOwnerName;
-    private javax.swing.JTextField txtOwnerTele;
-    private javax.swing.JTextField txtSeatsNum;
-    private javax.swing.JTextField txtYear;
+    private javax.swing.JTable tblDisplay;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        
+        DefaultTableModel model =(DefaultTableModel) tblDisplay.getModel();
+        model.setRowCount(0);
+        
+        for(ServiceRecord sr : carProfile.getServiceRecords().getServiceRecords()){
+            Object[] row = new Object[3];
+            row[0] = sr.getDate();
+            row[1] = sr.getCharges();
+            row[2] = sr.getParts();
+            
+            model.addRow(row);
+        }
+        
+        
+        
+        
+    }
 }

@@ -4,7 +4,9 @@
  */
 package ui;
 
-import model.Person;
+import java.util.ArrayList;
+import model.CarProfile;
+import model.ServiceRecords;
 
 /**
  *
@@ -16,10 +18,12 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     
-    Person person;
+    CarProfile carProfile;
+    
     public MainJFrame() {
         initComponents(); 
-        person = new Person();
+        carProfile = new CarProfile();
+        
     }
 
     /**
@@ -112,7 +116,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
         
-        CreateJPanel createJPanel = new CreateJPanel(person);
+        CreateJPanel createJPanel = new CreateJPanel(carProfile);
         splitPane.setRightComponent(createJPanel);
         
     }//GEN-LAST:event_btnCreateActionPerformed
@@ -120,7 +124,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayActionPerformed
         // TODO add your handling code here:
         
-        DisplayJPanel displayJPanel = new DisplayJPanel(person);
+        DisplayJPanel displayJPanel = new DisplayJPanel(carProfile);
         splitPane.setRightComponent(displayJPanel);
         
     }//GEN-LAST:event_btnDisplayActionPerformed
