@@ -18,8 +18,7 @@ public class MainJFrame extends javax.swing.JFrame {
     
     Person person;
     public MainJFrame() {
-        initComponents();
-        
+        initComponents(); 
         person = new Person();
     }
 
@@ -113,15 +112,16 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
         
-        CreateJPanel createPanel = new CreateJPanel(person);
-        splitPane.setRightComponent(createPanel);
+        CreateJPanel createJPanel = new CreateJPanel(person);
+        splitPane.setRightComponent(createJPanel);
+        
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayActionPerformed
         // TODO add your handling code here:
-        DisplayJPanel displayPanel = new DisplayJPanel(person);
-        splitPane.setRightComponent(displayPanel);
-               
+        
+        DisplayJPanel displayJPanel = new DisplayJPanel(person);
+        splitPane.setRightComponent(displayJPanel);
         
     }//GEN-LAST:event_btnDisplayActionPerformed
 
