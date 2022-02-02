@@ -26,7 +26,7 @@ public class CarProfile {
     private String ownerDriverLicense;
     private String ownerSocialSecurityNumber;
     private String ownerAddress;
-    private ServiceRecords serviceRecords;
+    private ServiceRecordHistory serviceRecords;
     private String warrantyYear;
     private String photo;
 
@@ -35,6 +35,7 @@ public class CarProfile {
         this.licensePlates = new ArrayList<>();
         this.ownerTelephonenumbers = new ArrayList<>();
         this.ownerEmailAddresses = new ArrayList<>();
+        this.serviceRecords = new ServiceRecordHistory();
        
     }
 
@@ -144,11 +145,11 @@ public class CarProfile {
         this.ownerAddress = ownerAddress;
     }
 
-    public ServiceRecords getServiceRecords() {
+    public ServiceRecordHistory getServiceRecords() {
         return serviceRecords;
     }
 
-    public void setServiceRecords(ServiceRecords serviceRecords) {
+    public void setServiceRecords(ServiceRecordHistory serviceRecords) {
         this.serviceRecords = serviceRecords;
     }
 

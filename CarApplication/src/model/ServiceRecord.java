@@ -14,6 +14,13 @@ public class ServiceRecord {
     String charges;
     String parts;
 
+    public ServiceRecord(String date, String charges, String parts) {
+        this.date = date;
+        this.charges = charges;
+        this.parts = parts;
+    }
+    
+    
     public String getDate() {
         return date;
     }
@@ -36,6 +43,13 @@ public class ServiceRecord {
 
     public void setParts(String parts) {
         this.parts = parts;
+    }
+    
+    
+    
+    @Override
+    public String toString(){
+        return date;
     }
     
 }

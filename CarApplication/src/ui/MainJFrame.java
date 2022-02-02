@@ -6,7 +6,7 @@ package ui;
 
 import java.util.ArrayList;
 import model.CarProfile;
-import model.ServiceRecords;
+import model.ServiceRecordHistory;
 
 /**
  *
@@ -42,6 +42,7 @@ public class MainJFrame extends javax.swing.JFrame {
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +83,8 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         splitPane.setLeftComponent(controlPanel);
+
+        workArea.setAutoscrolls(true);
 
         javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
         workArea.setLayout(workAreaLayout);
