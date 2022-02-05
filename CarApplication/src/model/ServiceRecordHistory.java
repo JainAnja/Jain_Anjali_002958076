@@ -28,8 +28,6 @@ public class ServiceRecordHistory {
     }
     
     
-    
-    
     public ServiceRecord addNewRecords(String date, String charges, String parts){
         ServiceRecord sr = new ServiceRecord(date, charges, parts);
         history.add(sr);

@@ -40,19 +40,15 @@
                   <Component id="iblServiceRecords" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="lblPhoto" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblOwnerTele" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblOwnerName" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                      <Component id="txtOwnerName" linkSize="8" min="-2" pref="108" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                                  </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="lblPhoto" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblOwnerTele" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="lblOwnerName" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="txtOwnerName" linkSize="8" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
-                              <Component id="jDesktopPane2" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
@@ -76,49 +72,45 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="txtOwnerTele" linkSize="8" min="-2" pref="106" max="-2" attributes="0"/>
-                                                  <Component id="txtOwnerEmail" linkSize="8" min="-2" pref="118" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                      <Component id="lblOwnerSocialSecurityNum" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                              <Component id="jScrollPane4" min="-2" pref="219" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="lblOwnerSocialSecurityNum" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jScrollPane2" min="-2" pref="205" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Group type="102" alignment="1" attributes="0">
-                                                              <Component id="lblLicensePlates" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                              <Component id="txtLicensePlates" linkSize="8" min="-2" pref="111" max="-2" attributes="0"/>
-                                                          </Group>
                                                           <Group type="102" alignment="1" attributes="0">
                                                               <Component id="lblColor" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                                               <Component id="txtColor" linkSize="8" min="-2" pref="90" max="-2" attributes="0"/>
+                                                              <EmptySpace max="32767" attributes="0"/>
+                                                              <Component id="lblEngineNo" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" alignment="1" attributes="0">
                                                               <Component id="lblOwnerAddress" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="jScrollPane3" min="-2" pref="222" max="-2" attributes="0"/>
                                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                              <Component id="txtOwnerAddress" linkSize="8" min="-2" pref="110" max="-2" attributes="0"/>
+                                                              <Component id="lblSeats" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                       </Group>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
                                                       <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="lblEngineNo" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblLicensePlates" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jScrollPane1" min="-2" pref="194" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                                      <Component id="lblOwnerDriverLic" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
                                           <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="lblSeats" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="txtModel" linkSize="8" min="-2" pref="114" max="-2" attributes="0"/>
-                                                      <Component id="txtWarrantyYear" linkSize="8" min="-2" pref="106" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="325" max="-2" attributes="0"/>
-                                                  <Component id="lblOwnerDriverLic" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="txtModel" linkSize="8" min="-2" pref="114" max="-2" attributes="0"/>
+                                              <Component id="txtWarrantyYear" linkSize="8" min="-2" pref="106" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="btnPhoto" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -155,7 +147,7 @@
                               <Component id="txtParts" linkSize="8" min="-2" pref="110" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="185" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -178,59 +170,66 @@
                   <Component id="txtEngineNo" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblYear" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtYear" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="iblWarrantyYear" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="txtWarrantyYear" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblOwnerDriverLic" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="txtOwnerDriverLic" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtLicensePlates" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblLicensePlates" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtYear" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="iblWarrantyYear" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="txtWarrantyYear" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblOwnerDriverLic" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="txtOwnerDriverLic" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblLicensePlates" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jScrollPane1" min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblOwnerName" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="txtOwnerName" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblOwnerEmail" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="txtOwnerEmail" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblOwnerAddress" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="txtOwnerAddress" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblSeats" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="txtSeats" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblOwnerName" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="txtOwnerName" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblOwnerEmail" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="lblOwnerAddress" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="lblSeats" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="txtSeats" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jScrollPane2" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="jScrollPane3" min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblOwnerTele" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="txtOwnerTele" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblOwnerSocialSecurityNum" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="txtSocailSecurityNum" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="btnPhoto" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPhoto" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                      <Component id="iblServiceRecords" min="-2" pref="16" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtDate" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblCharges" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtCharges1" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblParts" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtParts" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblOwnerTele" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="lblOwnerSocialSecurityNum" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="txtSocailSecurityNum" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="btnSave" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jDesktopPane2" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" min="-2" pref="48" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="101" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="btnPhoto" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPhoto" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+              <Component id="iblServiceRecords" min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtDate" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCharges" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCharges1" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblParts" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtParts" linkSize="9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDate" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="btnSave" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -293,8 +292,6 @@
         <Property name="text" type="java.lang.String" value="Seats Number:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtOwnerTele">
-    </Component>
     <Component class="javax.swing.JLabel" name="lblLicensePlates">
       <Properties>
         <Property name="text" type="java.lang.String" value="License Plates:"/>
@@ -306,11 +303,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Owner Name:"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtLicensePlates">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLicensePlatesActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblOwnerTele">
       <Properties>
@@ -324,17 +316,10 @@
         <Property name="text" type="java.lang.String" value="Owner Email Address:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtOwnerEmail">
-    </Component>
     <Component class="javax.swing.JLabel" name="lblOwnerDriverLic">
       <Properties>
         <Property name="text" type="java.lang.String" value="Owner Drivers License:"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtOwnerAddress">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtOwnerAddressActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblOwnerSocialSecurityNum">
       <Properties>
@@ -412,40 +397,63 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPhotoActionPerformed"/>
       </Events>
     </Component>
-    <Container class="javax.swing.JDesktopPane" name="jDesktopPane2">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[208, 212]"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[208, 212]"/>
-        </Property>
-      </Properties>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
 
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lblImage" min="-2" pref="65" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="lblImage" min="-2" pref="77" max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblImage">
+        <Component class="javax.swing.JTextArea" name="txtAreaLicensePlates">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="txtAreaOwnerEmailAddress">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="txtAreaOwnerAddress">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="txtAreaOwnerTelNo">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

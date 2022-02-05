@@ -7,10 +7,10 @@ package ui;
 import javax.swing.JOptionPane;
 import model.CarProfile;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-
-
 
 /**
  *
@@ -22,6 +22,7 @@ public class CreateJPanel extends javax.swing.JPanel {
      * Creates new form CreateJPanel
      */
     CarProfile carProfile;
+
     public CreateJPanel(CarProfile carProfile) {
         initComponents();
         this.carProfile = carProfile;
@@ -50,17 +51,13 @@ public class CreateJPanel extends javax.swing.JPanel {
         lblEngineNo = new javax.swing.JLabel();
         txtEngineNo = new javax.swing.JTextField();
         lblSeats = new javax.swing.JLabel();
-        txtOwnerTele = new javax.swing.JTextField();
         lblLicensePlates = new javax.swing.JLabel();
         txtSeats = new javax.swing.JTextField();
         lblOwnerName = new javax.swing.JLabel();
-        txtLicensePlates = new javax.swing.JTextField();
         lblOwnerTele = new javax.swing.JLabel();
         txtOwnerName = new javax.swing.JTextField();
         lblOwnerEmail = new javax.swing.JLabel();
-        txtOwnerEmail = new javax.swing.JTextField();
         lblOwnerDriverLic = new javax.swing.JLabel();
-        txtOwnerAddress = new javax.swing.JTextField();
         lblOwnerSocialSecurityNum = new javax.swing.JLabel();
         txtOwnerDriverLic = new javax.swing.JTextField();
         lblOwnerAddress = new javax.swing.JLabel();
@@ -76,8 +73,14 @@ public class CreateJPanel extends javax.swing.JPanel {
         lblParts = new javax.swing.JLabel();
         txtCharges1 = new javax.swing.JTextField();
         btnPhoto = new javax.swing.JButton();
-        jDesktopPane2 = new javax.swing.JDesktopPane();
-        lblImage = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAreaLicensePlates = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtAreaOwnerEmailAddress = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtAreaOwnerAddress = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtAreaOwnerTelNo = new javax.swing.JTextArea();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -117,23 +120,11 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         lblOwnerName.setText("Owner Name:");
 
-        txtLicensePlates.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLicensePlatesActionPerformed(evt);
-            }
-        });
-
         lblOwnerTele.setText("Owner TelePhone Numbers:");
 
         lblOwnerEmail.setText("Owner Email Address:");
 
         lblOwnerDriverLic.setText("Owner Drivers License:");
-
-        txtOwnerAddress.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtOwnerAddressActionPerformed(evt);
-            }
-        });
 
         lblOwnerSocialSecurityNum.setText("Owner Social Security Number:");
 
@@ -184,27 +175,21 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        jDesktopPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jDesktopPane2.setMaximumSize(new java.awt.Dimension(208, 212));
-        jDesktopPane2.setMinimumSize(new java.awt.Dimension(208, 212));
+        txtAreaLicensePlates.setColumns(20);
+        txtAreaLicensePlates.setRows(5);
+        jScrollPane1.setViewportView(txtAreaLicensePlates);
 
-        jDesktopPane2.setLayer(lblImage, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        txtAreaOwnerEmailAddress.setColumns(20);
+        txtAreaOwnerEmailAddress.setRows(5);
+        jScrollPane2.setViewportView(txtAreaOwnerEmailAddress);
 
-        javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
-        jDesktopPane2.setLayout(jDesktopPane2Layout);
-        jDesktopPane2Layout.setHorizontalGroup(
-            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jDesktopPane2Layout.setVerticalGroup(
-            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        txtAreaOwnerAddress.setColumns(20);
+        txtAreaOwnerAddress.setRows(5);
+        jScrollPane3.setViewportView(txtAreaOwnerAddress);
+
+        txtAreaOwnerTelNo.setColumns(20);
+        txtAreaOwnerTelNo.setRows(5);
+        jScrollPane4.setViewportView(txtAreaOwnerTelNo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -217,17 +202,14 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(iblServiceRecords, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblPhoto)
-                                    .addComponent(lblOwnerTele)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblOwnerName)
-                                        .addGap(19, 19, 19)
-                                        .addComponent(txtOwnerName, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(140, 140, 140)))
-                                .addGap(241, 241, 241)
-                                .addComponent(jDesktopPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblPhoto)
+                                .addComponent(lblOwnerTele)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblOwnerName)
+                                    .addGap(19, 19, 19)
+                                    .addComponent(txtOwnerName, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(140, 140, 140)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(58, 58, 58)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,38 +229,37 @@ public class CreateJPanel extends javax.swing.JPanel {
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(txtOwnerTele, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(txtOwnerEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lblOwnerSocialSecurityNum))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                     .addGroup(layout.createSequentialGroup()
-                                                        .addGap(0, 0, Short.MAX_VALUE)
-                                                        .addComponent(lblOwnerSocialSecurityNum))
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addGap(47, 47, 47)
+                                                        .addGap(18, 18, 18)
                                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addGroup(layout.createSequentialGroup()
-                                                                .addComponent(lblLicensePlates)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(txtLicensePlates, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                             .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(lblColor)
                                                                 .addGap(18, 18, 18)
-                                                                .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(lblEngineNo))
                                                             .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(lblOwnerAddress)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addGap(18, 18, 18)
-                                                                .addComponent(txtOwnerAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addComponent(lblSeats))))
+                                                    .addGroup(layout.createSequentialGroup()
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(lblEngineNo))))
+                                                        .addComponent(lblLicensePlates)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(27, 27, 27)
+                                                        .addComponent(lblOwnerDriverLic))))
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(lblSeats)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(txtWarrantyYear, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGap(325, 325, 325)
-                                                    .addComponent(lblOwnerDriverLic)))
+                                                .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtWarrantyYear, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(btnPhoto))))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,11 +285,11 @@ public class CreateJPanel extends javax.swing.JPanel {
                                         .addComponent(lblParts, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtParts, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 185, Short.MAX_VALUE)))
+                        .addGap(0, 100, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtBrand, txtCharges1, txtColor, txtDate, txtEngineNo, txtLicensePlates, txtModel, txtOwnerAddress, txtOwnerDriverLic, txtOwnerEmail, txtOwnerName, txtOwnerTele, txtParts, txtSeats, txtSocailSecurityNum, txtWarrantyYear, txtYear});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtBrand, txtCharges1, txtColor, txtDate, txtEngineNo, txtModel, txtOwnerDriverLic, txtOwnerName, txtParts, txtSeats, txtSocailSecurityNum, txtWarrantyYear, txtYear});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,82 +306,143 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtEngineNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblYear)
-                    .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(iblWarrantyYear, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtWarrantyYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblOwnerDriverLic, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtOwnerDriverLic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtLicensePlates, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLicensePlates, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOwnerName, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtOwnerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblOwnerEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtOwnerEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblOwnerAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtOwnerAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSeats, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOwnerTele, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtOwnerTele, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblOwnerSocialSecurityNum, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSocailSecurityNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblYear)
+                        .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(iblWarrantyYear, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtWarrantyYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblOwnerDriverLic, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtOwnerDriverLic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblLicensePlates, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(81, 81, 81)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblOwnerName, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtOwnerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblOwnerEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblOwnerAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblSeats, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnPhoto)
-                            .addComponent(lblPhoto))
-                        .addGap(68, 68, 68)
-                        .addComponent(iblServiceRecords, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
+                        .addGap(49, 49, 49)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCharges)
-                            .addComponent(txtCharges1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblParts)
-                            .addComponent(txtParts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDate))
-                        .addGap(40, 40, 40)
-                        .addComponent(btnSave))
-                    .addComponent(jDesktopPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(101, Short.MAX_VALUE))
+                            .addComponent(lblOwnerTele, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblOwnerSocialSecurityNum, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSocailSecurityNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)))
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnPhoto)
+                    .addComponent(lblPhoto))
+                .addGap(68, 68, 68)
+                .addComponent(iblServiceRecords, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCharges)
+                    .addComponent(txtCharges1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblParts)
+                    .addComponent(txtParts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDate))
+                .addGap(40, 40, 40)
+                .addComponent(btnSave)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtBrand, txtCharges1, txtColor, txtDate, txtEngineNo, txtLicensePlates, txtModel, txtOwnerAddress, txtOwnerDriverLic, txtOwnerEmail, txtOwnerName, txtOwnerTele, txtParts, txtSeats, txtSocailSecurityNum, txtWarrantyYear, txtYear});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtBrand, txtCharges1, txtColor, txtDate, txtEngineNo, txtModel, txtOwnerDriverLic, txtOwnerName, txtParts, txtSeats, txtSocailSecurityNum, txtWarrantyYear, txtYear});
 
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        
-        carProfile.setBrand(txtBrand.getText());
-        carProfile.setModel(txtModel.getText());
-        carProfile.setColor(txtColor.getText());
-        carProfile.setYear(txtYear.getText());
-        carProfile.setEngineNo(txtEngineNo.getText());
-        carProfile.setSeatsNumber(txtSeats.getText());
-        carProfile.getLicensePlates().add(txtLicensePlates.getText());
-        carProfile.setOwnerName(txtOwnerTele.getText());
-        carProfile.getOwnerTelephonenumbers().add(txtOwnerTele.getText());
-        carProfile.getOwnerEmailAddresses().add(txtOwnerEmail.getText());
-        carProfile.setOwnerDriverLicense(txtOwnerDriverLic.getText());
-        carProfile.setOwnerSocialSecurityNumber(txtSocailSecurityNum.getText());
-        carProfile.setOwnerAddress(txtOwnerAddress.getText());
-        carProfile.setWarrantyYear(txtWarrantyYear.getText());
-       
-        carProfile.getServiceRecords().addNewRecords(txtDate.getText(), txtCharges1.getText(), txtParts.getText());
-        
-        JOptionPane.showMessageDialog(this, "New car profile added successfully");
-        resetFields();
-        
-        
-        
+
+        boolean errorFlag = false;
+        String errorFields = "Please enter correct values for following fields: \n";
+
+        if (!isValidText(txtBrand.getText())) {
+            errorFields += "Invalid Brand\n";
+            errorFlag = true;
+        }
+
+        if (!isValidText(txtModel.getText())) {
+            errorFields += "Invalid Model \n";
+            errorFlag = true;
+        }
+
+        if (!isValidText(txtColor.getText())) {
+            errorFields += "Invalid Color \n";
+            errorFlag = true;
+        }
+
+        if (!isValidYear(txtYear.getText())) {
+            errorFields += "Invalid Year \n";
+            errorFlag = true;
+        }
+
+        if (!isValidText(txtEngineNo.getText())) {
+            errorFields += "Invalid Engine No \n";
+            errorFlag = true;
+        }
+
+        if (!isValidText(txtAreaLicensePlates.getText())) {
+            errorFields += "Invalid License plates \n";
+            errorFlag = true;
+        }
+
+        if (!isValidEmail(txtAreaOwnerEmailAddress.getText())) {
+            errorFlag = true;
+            errorFields += "Invalid email \n";
+        }
+
+        if (!isValidText(txtOwnerDriverLic.getText())) {
+            errorFlag = true;
+            errorFields += "Invalid drivers license \n";
+        }
+
+        if (!isValidYear(txtWarrantyYear.getText())) {
+            errorFields += "Invalid Warranty Year";
+            errorFlag = true;
+        }
+        if (!errorFlag) {
+
+            carProfile.setBrand(txtBrand.getText());
+            carProfile.setModel(txtModel.getText());
+            carProfile.setColor(txtColor.getText());
+            carProfile.setYear(txtYear.getText());
+            carProfile.setEngineNo(txtEngineNo.getText());
+            carProfile.setWarrantyYear(txtWarrantyYear.getText());
+            carProfile.setOwnerName(txtOwnerName.getText());
+            carProfile.setOwnerSocialSecurityNumber(txtSocailSecurityNum.getText());
+            carProfile.setSeatsNumber(txtSeats.getText());
+            carProfile.setOwnerDriverLicense(txtOwnerDriverLic.getText());
+
+            carProfile.addOwnerAddress(txtAreaOwnerAddress.getText());
+            carProfile.addLicensePlate(txtAreaLicensePlates.getText());
+            carProfile.addOnwerEmailAddress(txtAreaOwnerEmailAddress.getText());
+
+            // Update this one
+            carProfile.getOwnerTelephonenumbers().add(txtAreaOwnerTelNo.getText());
+
+            // Validating service records and it's not mandatory to have service records while creating car profile    
+            if (isValidText(txtDate.getText()) && isValidText(txtCharges1.getText()) && isValidText(txtParts.getText())) {
+                carProfile.getServiceRecords().addNewRecords(txtDate.getText(), txtCharges1.getText(), txtParts.getText());
+            }
+
+            JOptionPane.showMessageDialog(this, "New car profile added successfully", "FORM SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+            resetFields();
+        } else {
+            System.out.println(errorFields);
+            JOptionPane.showMessageDialog(this, errorFields, "FORM ERROR ", JOptionPane.ERROR_MESSAGE);
+        }
+
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -411,34 +453,37 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtYear.setText("");
         txtEngineNo.setText("");
         txtSeats.setText("");
-        txtLicensePlates.setText("");
-        txtOwnerTele.setText("");
-        txtOwnerTele.setText("");
         txtOwnerDriverLic.setText("");
-        txtOwnerEmail.setText("");
         txtSocailSecurityNum.setText("");
-        txtOwnerAddress.setText("");
         txtWarrantyYear.setText("");
         txtDate.setText("");
         txtCharges1.setText("");
         txtParts.setText("");
-        
     }
-    
+
+    public boolean isValidText(String input) {
+        if (!input.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isValidYear(String input) {
+        if (!input.isEmpty() && input.length() == 4) {
+            return true;
+        }
+
+        return false;
+    }
+
     public boolean isValidEmail(String emailInput) {
-        
-        if(emailInput.isEmpty() || !emailInput.contains("@") || !emailInput.contains(".com") || !emailInput.contains(".edu")) {
-            return false;
+
+        if (!emailInput.isEmpty() && emailInput.contains("@") && (emailInput.toLowerCase().contains(".com") || emailInput.toLowerCase().contains(".edu"))) {
+            return true;
         }
-        return true;
+        return false;
     }
-    
-    public boolean isValidNumber(String input) {
-        if(input.isEmpty() || input.isEmpty()) {
-            return false;
-        }
-        return true;
-    }
+
     private void txtWarrantyYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWarrantyYearActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtWarrantyYearActionPerformed
@@ -455,32 +500,20 @@ public class CreateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCharges1ActionPerformed
 
-    private void txtLicensePlatesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLicensePlatesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtLicensePlatesActionPerformed
-
-    private void txtOwnerAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOwnerAddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtOwnerAddressActionPerformed
-
     private void btnPhotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPhotoActionPerformed
         // TODO add your handling code here:
-        
-        
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        File f=chooser.getSelectedFile();
-        lblImage.setIcon(new ImageIcon(f.toString()));
-        filename =f.getAbsolutePath();
-        lblPhoto.setText(filename);
-        
-        
-        
-        
-        
-        
-        
-                
+
+        try {
+            JFileChooser chooser = new JFileChooser();
+            chooser.showOpenDialog(null);
+            File f = chooser.getSelectedFile();
+            filename = f.getAbsolutePath();
+            carProfile.setPhoto(Files.readAllBytes(f.toPath()));
+        } catch (IOException ioe) {
+            System.out.println("Exception while uploading photo: " + ioe);
+        }
+
+
     }//GEN-LAST:event_btnPhotoActionPerformed
 
 
@@ -489,14 +522,16 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel iblServiceRecords;
     private javax.swing.JLabel iblWarrantyYear;
-    private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JDialog jDialog1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel lblBrand;
     private javax.swing.JLabel lblCharges;
     private javax.swing.JLabel lblColor;
     private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblEngineNo;
-    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblLicensePlates;
     private javax.swing.JLabel lblOwnerAddress;
     private javax.swing.JLabel lblOwnerDriverLic;
@@ -510,18 +545,18 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblYear;
     private javax.swing.JLabel lblmodel;
+    private javax.swing.JTextArea txtAreaLicensePlates;
+    private javax.swing.JTextArea txtAreaOwnerAddress;
+    private javax.swing.JTextArea txtAreaOwnerEmailAddress;
+    private javax.swing.JTextArea txtAreaOwnerTelNo;
     private javax.swing.JTextField txtBrand;
     private javax.swing.JTextField txtCharges1;
     private javax.swing.JTextField txtColor;
     private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtEngineNo;
-    private javax.swing.JTextField txtLicensePlates;
     private javax.swing.JTextField txtModel;
-    private javax.swing.JTextField txtOwnerAddress;
     private javax.swing.JTextField txtOwnerDriverLic;
-    private javax.swing.JTextField txtOwnerEmail;
     private javax.swing.JTextField txtOwnerName;
-    private javax.swing.JTextField txtOwnerTele;
     private javax.swing.JTextField txtParts;
     private javax.swing.JTextField txtSeats;
     private javax.swing.JTextField txtSocailSecurityNum;
@@ -529,7 +564,6 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
 
-
-byte[] photo = null;
-String filename = null;
+    byte[] photo = null;
+    String filename = null;
 }

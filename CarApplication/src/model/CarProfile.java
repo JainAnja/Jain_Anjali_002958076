@@ -28,19 +28,17 @@ public class CarProfile {
     private String ownerAddress;
     private ServiceRecordHistory serviceRecords;
     private String warrantyYear;
-    private String photo;
+    private byte photo[]; // For file upload
 
     public CarProfile() {
         
         this.licensePlates = new ArrayList<>();
         this.ownerTelephonenumbers = new ArrayList<>();
         this.ownerEmailAddresses = new ArrayList<>();
-        this.serviceRecords = new ServiceRecordHistory();
-       
+        this.serviceRecords = new ServiceRecordHistory();       
     }
 
-    
-    
+      
     public String getBrand() {
         return brand;
     }
@@ -161,14 +159,32 @@ public class CarProfile {
         this.warrantyYear = warrantyYear;
     }
 
-    public String getPhoto() {
+    public byte[] getPhoto() {
         return photo;
     }
 
-    public void setPhoto(String photo) {
+    public void setPhoto(byte photo[]) {
         this.photo = photo;
     }
     
+    
+    public void addOnwerEmailAddress(String emailAddresses) {
+        for (String emailAddress : emailAddresses.split("\n")) {
+            this.ownerEmailAddresses.add(emailAddress);
+        }
+    }
+    
+    public void addLicensePlate(String licensePlates) {
+        for (String licensePlate : licensePlates.split("\n")) {
+            this.licensePlates.add(licensePlate);
+        }
+    } 
+    
+    public void addOwnerAddress(String ownerAddresses) {
+        for (String ownerAddress : ownerAddresses.split("\n")) {
+            this.ownerEmailAddresses.add(ownerAddress);
+        }
+    }
     
  
     
