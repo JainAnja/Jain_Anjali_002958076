@@ -448,6 +448,11 @@ public class DisplayJPanel extends javax.swing.JPanel {
         txtYear.setText(carProfile.getYear());
         txtModel.setText(carProfile.getModel());
         txtWarrantyYear.setText(carProfile.getWarrantyYear());
+        txtOwnerDriverLic.setText(carProfile.getOwnerDriverLicense());
+        txtEngineNo.setText(carProfile.getEngineNo());
+        txtSeats.setText(carProfile.getSeatsNumber());
+        txtOwnerName.setText(carProfile.getOwnerName());
+        txtSocailSecurityNum.setText(carProfile.getOwnerSocialSecurityNumber());
         
         
 
