@@ -383,6 +383,7 @@ public class DisplayJPanel extends javax.swing.JPanel {
         txtDate.setText(selectedRecord.getDate());
         txtCharges1.setText(selectedRecord.getCharges());
         txtParts.setText(selectedRecord.getParts());
+     
 
 
     }//GEN-LAST:event_btnViewActionPerformed

@@ -459,6 +459,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtDate.setText("");
         txtCharges1.setText("");
         txtParts.setText("");
+        txtOwnerName.setText("");
     }
 
     public boolean isValidText(String input) {
