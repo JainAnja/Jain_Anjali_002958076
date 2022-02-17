@@ -27,7 +27,7 @@ public class CarCatalog {
         this.cars = cars;
     }
 
-    public Car findFirstAvailableCard() {
+    public Car findFirstAvailableCar() {
         for (Car car : this.cars) {
             if (car.isAvailable()) {
                 return car;

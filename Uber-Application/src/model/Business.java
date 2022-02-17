@@ -11,13 +11,29 @@ package model;
 public class Business {
     
     CarCatalog carCatalog;
-    Manufacture manufacture;
+    ManufactureDirectory manufactureDirectory;
 
     public Business() {
-        this.carCatalog = carCatalog;
-        this.manufacture = manufacture;
+        this.carCatalog = new CarCatalog();
+        this.manufactureDirectory = new ManufactureDirectory();
     }
-    
-    
+
+    public CarCatalog getCarCatalog() {
+        return carCatalog;
+    }
+
+    public void setCarCatalog(CarCatalog carCatalog) {
+        this.carCatalog = carCatalog;
+    }
+
+    public ManufactureDirectory getManufactureDirectory() {
+        return manufactureDirectory;
+    }
+
+    public void setManufactureDirectory(ManufactureDirectory manufactureDirectory) {
+        this.manufactureDirectory = manufactureDirectory;
+    }
+
+  
     
 }

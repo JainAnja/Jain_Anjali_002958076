@@ -10,18 +10,33 @@ package model;
  */
 public class Manufacture {
     
-    String name;
+    private String ManufactureName;
+    private CarCatalog carCatalog;
+
+    public Manufacture() {
+        this.carCatalog = new CarCatalog();
+    }
+    
+    
     
 
-    public String getName() {
-        return name;
+    public String getManufactureName() {
+        return ManufactureName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setManufactureName(String ManufactureName) {
+        this.ManufactureName = ManufactureName;
     }
-  
+
+    public CarCatalog getCarCatalog() {
+        return carCatalog;
+    }
+
+    public void setCarCatalog(CarCatalog carCatalog) {
+        this.carCatalog = carCatalog;
+    }
     
+
     
     
 }

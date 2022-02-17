@@ -12,19 +12,41 @@ import java.util.ArrayList;
  */
 public class ManufactureDirectory {
     
-    ArrayList <Manufacture> supliers;
+    ArrayList <Manufacture> manufactureList;
 
-    public ManufactureDirectory(ArrayList<Manufacture> supliers) {
-        this.supliers = supliers;
+    public ManufactureDirectory() {
+        this.manufactureList = new ArrayList<>();
     }
     
-    public ArrayList<Manufacture> getSupliers() {
-        return supliers;
+    public ArrayList<Manufacture> getManufactureList() {
+        return manufactureList;
+    }
+    
+    
+    public Manufacture addNewManufacture(){
+        Manufacture manufacture = new Manufacture();
+        manufactureList.add(manufacture);
+        return manufacture;
+    }
+    
+    
+    
+    public void removeManufacture(Manufacture manuf){
+        manufactureList.remove(manuf);
+    }
+    
+    
+    public Manufacture searchManufacture(String ManufactureName){
+        
+        
+        for(Manufacture manufacture : manufactureList){
+            if(manufacture.getManufactureName().equalsIgnoreCase(ManufactureName))
+                
+                return manufacture;
+        }
+        return null;
     }
 
-    public void setSupliers(ArrayList<Manufacture> supliers) {
-        this.supliers = supliers;
-    }
     
     
 }

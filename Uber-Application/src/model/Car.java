@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 
 
 /**
@@ -15,22 +17,27 @@ public class Car {
     
     private String brand;
     private String model;
-    private String Color;
-    private String SerialNum;
+    private String color;
+    private String serialNum;
     private boolean available;
     private String yearOfMunufacture;
-    private int SeatNum;
+    private int seatNum;
     private String city;
+    private double price;
+    
+    
+    
 
     public Car() {
         this.brand = brand;
         this.model = model;
-        this.Color = Color;
-        this.SerialNum = SerialNum;
+        this.color = color;
+        this.serialNum = serialNum;
         this.available = available;
         this.yearOfMunufacture = yearOfMunufacture;
-        this.SeatNum = SeatNum;
+        this.seatNum = seatNum;
         this.city = city;
+        this.price = price;
     }
 
     public String getBrand() {
@@ -50,19 +57,19 @@ public class Car {
     }
 
     public String getColor() {
-        return Color;
+        return color;
     }
 
-    public void setColor(String Color) {
-        this.Color = Color;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getSerialNum() {
-        return SerialNum;
+        return serialNum;
     }
 
-    public void setSerialNum(String SerialNum) {
-        this.SerialNum = SerialNum;
+    public void setSerialNum(String serialNum) {
+        this.serialNum = serialNum;
     }
 
     public boolean isAvailable() {
@@ -82,11 +89,11 @@ public class Car {
     }
 
     public int getSeatNum() {
-        return SeatNum;
+        return seatNum;
     }
 
-    public void setSeatNum(int SeatNum) {
-        this.SeatNum = SeatNum;
+    public void setSeatNum(int seatNum) {
+        this.seatNum = seatNum;
     }
 
     public String getCity() {
@@ -96,6 +103,17 @@ public class Car {
     public void setCity(String city) {
         this.city = city;
     }
+
+    
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    
+    
     
     
 }

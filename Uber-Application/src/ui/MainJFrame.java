@@ -4,7 +4,11 @@
  */
 package ui;
 
-import model.CarCatalog;
+import java.awt.CardLayout;
+import model.Business;
+import model.DataLoader;
+import model.ManufactureDirectory;
+
 
 /**
  *
@@ -16,13 +20,18 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     
+    Business business;
+    ManufactureDirectory manufactureDirectory;
+    private DataLoader dataLoader;
     
-    CarCatalog carProfile;
     public MainJFrame() {
         initComponents();
         
-        carProfile = new CarCatalog();
-        
+        this.business = new Business();
+        this.dataLoader = new DataLoader(business);
+        this.manufactureDirectory = business.getManufactureDirectory();
+        setSize(830,600);
+       
     }
 
     /**
@@ -51,8 +60,18 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
@@ -119,11 +138,24 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
         
-        CreateJPanel createPanel = new CreateJPanel(carProfile);
+        CreateJPanel createPanel = new CreateJPanel(business);
         SplitPane.setRightComponent(createPanel);
-                
+        
+        
+       
         
     }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        
+        SearchJPanel searchPanel = new SearchJPanel(business);
+        SplitPane.setRightComponent(searchPanel);
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
      * @param args the command line arguments
