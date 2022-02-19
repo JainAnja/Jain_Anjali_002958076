@@ -4,7 +4,10 @@
  */
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.time.LocalDateTime;
+
 
 
 
@@ -20,24 +23,18 @@ public class Car {
     private String color;
     private String serialNum;
     private boolean available;
-    private String yearOfMunufacture;
+    private String yearOfManufacture;
     private int seatNum;
     private String city;
     private double price;
-    
+    private LocalDateTime lastUpdated;
+    private ArrayList<MaintenanceCertificate> certificates;
     
     
 
     public Car() {
-        this.brand = brand;
-        this.model = model;
-        this.color = color;
-        this.serialNum = serialNum;
-        this.available = available;
-        this.yearOfMunufacture = yearOfMunufacture;
-        this.seatNum = seatNum;
-        this.city = city;
-        this.price = price;
+        this.certificates = new ArrayList<>();
+        this.seatNum=5;
     }
 
     public String getBrand() {
@@ -80,13 +77,15 @@ public class Car {
         this.available = available;
     }
 
-    public String getYearOfMunufacture() {
-        return yearOfMunufacture;
+    public String getYearOfManufacture() {
+        return yearOfManufacture;
     }
 
-    public void setYearOfMunufacture(String yearOfMunufacture) {
-        this.yearOfMunufacture = yearOfMunufacture;
+    public void setYearOfManufacture(String yearOfManufacture) {
+        this.yearOfManufacture = yearOfManufacture;
     }
+
+    
 
     public int getSeatNum() {
         return seatNum;
@@ -111,6 +110,33 @@ public class Car {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public ArrayList<MaintenanceCertificate> getCertificates() {
+        return certificates;
+    }
+
+    public void setCertificates(ArrayList<MaintenanceCertificate> certificates) {
+        this.certificates = certificates;
+    }
+    
+    
+    
+    public ArrayList<MaintenanceCertificate> findExpiredCerts(){
+        ArrayList<MaintenanceCertificate> expiredCerts = new ArrayList();
+        for(MaintenanceCertificate maintenanceCertificate : this.certificates){
+            if(maintenanceCertificate.getExpieryDate().compareTo(LocalDate.now())>0){
+                expiredCerts.add(maintenanceCertificate);
+            }
+            
+            
+        } return expiredCerts;
+    }
+    
+
+    @Override
+    public String toString() {
+        return brand;
     }
     
     

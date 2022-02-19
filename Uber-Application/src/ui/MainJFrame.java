@@ -7,8 +7,6 @@ package ui;
 import java.awt.CardLayout;
 import model.Business;
 import model.DataLoader;
-import model.ManufactureDirectory;
-
 
 /**
  *
@@ -21,7 +19,7 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     
     Business business;
-    ManufactureDirectory manufactureDirectory;
+    
     private DataLoader dataLoader;
     
     public MainJFrame() {
@@ -29,8 +27,7 @@ public class MainJFrame extends javax.swing.JFrame {
         
         this.business = new Business();
         this.dataLoader = new DataLoader(business);
-        this.manufactureDirectory = business.getManufactureDirectory();
-        setSize(830,600);
+       
        
     }
 
@@ -148,6 +145,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
+        
+        UpdateJPanel updatePanel = new UpdateJPanel(business);
+        SplitPane.setRightComponent(updatePanel);
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed

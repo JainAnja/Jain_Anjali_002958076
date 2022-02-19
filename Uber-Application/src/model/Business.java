@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Anjali
@@ -11,11 +13,12 @@ package model;
 public class Business {
     
     CarCatalog carCatalog;
-    ManufactureDirectory manufactureDirectory;
-
+    ArrayList<String> cities;
+   
     public Business() {
         this.carCatalog = new CarCatalog();
-        this.manufactureDirectory = new ManufactureDirectory();
+        this.cities = new ArrayList<>();
+        
     }
 
     public CarCatalog getCarCatalog() {
@@ -26,14 +29,17 @@ public class Business {
         this.carCatalog = carCatalog;
     }
 
-    public ManufactureDirectory getManufactureDirectory() {
-        return manufactureDirectory;
+    public ArrayList<String> getCities() {
+        return cities;
     }
 
-    public void setManufactureDirectory(ManufactureDirectory manufactureDirectory) {
-        this.manufactureDirectory = manufactureDirectory;
+    public void setCities(ArrayList<String> cities) {
+        this.cities = cities;
     }
+    
+    
 
+   
   
     
 }

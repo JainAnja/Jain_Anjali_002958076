@@ -4,7 +4,14 @@
  */
 package ui;
 
+import com.github.javafaker.Faker;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import javax.swing.JOptionPane;
 import model.Business;
+import model.Car;
+import model.MaintenanceCertificate;
+import model.Utils;
 
 
 
@@ -22,6 +29,11 @@ public class CreateJPanel extends javax.swing.JPanel {
     public CreateJPanel(Business business) {
         initComponents();
         this.business = business;
+        for (String city : business.getCities()) {
+            jComboBoxCity.addItem(city);
+        }
+        btnGroup.add(jRadioBtnYes);
+        btnGroup.add(jRadioBtnNo);
                
         
         
@@ -36,52 +48,74 @@ public class CreateJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnGroup = new javax.swing.ButtonGroup();
+        jComboBoxYearOfMfg = new javax.swing.JComboBox<>();
+        lblYear = new javax.swing.JLabel();
+        jRadioBtnYes = new javax.swing.JRadioButton();
+        lblSeats = new javax.swing.JLabel();
+        jRadioBtnNo = new javax.swing.JRadioButton();
+        lblYear1 = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
+        txtPrice = new javax.swing.JTextField();
         lblBrand = new javax.swing.JLabel();
-        lblModel = new javax.swing.JLabel();
-        lblColor = new javax.swing.JLabel();
-        lblAvavilable = new javax.swing.JLabel();
-        lblSeralNum = new javax.swing.JLabel();
-        lblYearOfManu = new javax.swing.JLabel();
-        lblSeatNum = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         txtBrand = new javax.swing.JTextField();
-        txtSestlNum = new javax.swing.JTextField();
-        txtModel = new javax.swing.JTextField();
-        txtColor = new javax.swing.JTextField();
-        txtSerialNum = new javax.swing.JTextField();
-        txtAvailable = new javax.swing.JTextField();
-        txtYearOfManu = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
+        lblAvavilable = new javax.swing.JLabel();
+        lblmodel = new javax.swing.JLabel();
+        lblYear2 = new javax.swing.JLabel();
+        txtColor = new javax.swing.JTextField();
+        jComboBoxCity = new javax.swing.JComboBox<>();
+        lblColor = new javax.swing.JLabel();
+        jComboBoxNoOfSeats = new javax.swing.JComboBox<>();
+        txtModel = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        jComboBoxYearOfMfg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022" }));
+
+        lblYear.setText("Manufacturing year:");
+
+        jRadioBtnYes.setSelected(true);
+        jRadioBtnYes.setText("Yes");
+
+        lblSeats.setText("Number of seats:");
+
+        jRadioBtnNo.setText("No");
+
+        lblYear1.setText("MSRP:");
+
+        lblTitle.setFont(new java.awt.Font("Lucida Bright", 0, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Create");
+        lblTitle.setText("Create Car Profile");
 
-        lblBrand.setText("Brand :");
+        lblBrand.setText("Brand:");
 
-        lblModel.setText("Model :");
+        jPanel3.setBackground(new java.awt.Color(51, 102, 255));
 
-        lblColor.setText("Color :");
+        jLabel2.setFont(new java.awt.Font("Lucida Handwriting", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("UBER");
 
-        lblAvavilable.setText("Available :");
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(50, 50, 50))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addContainerGap())
+        );
 
-        lblSeralNum.setText("Serial Number :");
-
-        lblYearOfManu.setText("Year of Manufacture :");
-
-        lblSeatNum.setText("Number of Seats :");
-
-        txtBrand.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBrandActionPerformed(evt);
-            }
-        });
-
-        txtSestlNum.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSestlNumActionPerformed(evt);
-            }
-        });
-
+        btnSave.setBackground(new java.awt.Color(102, 255, 51));
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,122 +123,210 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblAvavilable.setText("Available :");
+        lblAvavilable.setFocusable(false);
+
+        lblmodel.setText("Model:");
+
+        lblYear2.setText("City:");
+
+        lblColor.setText("Color:");
+
+        jComboBoxNoOfSeats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "5", "7", "9" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSave)
-                .addGap(531, 531, 531))
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblColor)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblYearOfManu)
-                        .addComponent(lblAvavilable, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(lblSeralNum, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblModel)
-                            .addComponent(lblBrand))
-                        .addComponent(lblSeatNum, javax.swing.GroupLayout.Alignment.TRAILING)))
-                .addGap(184, 184, 184)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtBrand, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSestlNum, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSerialNum, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAvailable, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtYearOfManu, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(326, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblYear)
+                                            .addComponent(lblBrand))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtBrand, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jComboBoxCity, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(jComboBoxYearOfMfg, 0, 114, Short.MAX_VALUE))
+                                                .addGap(101, 101, 101)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(lblYear1)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(lblmodel)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addGap(71, 71, 71)
+                                                                .addComponent(lblColor))
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addGap(50, 50, 50)
+                                                                .addComponent(lblAvavilable)))
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addGap(27, 27, 27)
+                                                                .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jRadioBtnYes)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jRadioBtnNo))))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(lblSeats)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jComboBoxNoOfSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(lblYear2))
+                                .addGap(0, 368, Short.MAX_VALUE))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(127, 127, 127))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(370, 370, 370)
+                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(lblTitle)
-                .addGap(153, 153, 153)
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBrand)
-                    .addComponent(txtBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblModel)
-                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblmodel)
+                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblColor)
                     .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSeralNum)
-                    .addComponent(txtSerialNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblYear)
+                    .addComponent(lblYear1)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAvavilable, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAvailable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                    .addComponent(jComboBoxYearOfMfg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioBtnYes)
+                    .addComponent(jRadioBtnNo))
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblYearOfManu)
-                    .addComponent(txtYearOfManu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSeatNum)
-                    .addComponent(txtSestlNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
+                    .addComponent(lblYear2)
+                    .addComponent(lblSeats, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxNoOfSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(85, 85, 85)
                 .addComponent(btnSave)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(321, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBrandActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBrandActionPerformed
-
-    private void txtSestlNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSestlNumActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSestlNumActionPerformed
-
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
-        
-     String brand = txtBrand.getText();
-     String model = txtModel.getText();
-     String color = txtColor.getText();
-     String serialNum = txtSerialNum.getText();
-     boolean available = Boolean.parseBoolean(txtAvailable.getText());
-     String yearOfManufacture = txtYearOfManu.getText();
-     int seatNum = Integer.parseInt(txtSestlNum.getText());
+    
+     public void resetFields() {
+        txtBrand.setText("");
+        txtModel.setText("");
+        txtColor.setText("");
+        txtPrice.setText("");
+    }
      
-     double price;
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+
         
         
-        
+        boolean errorFlag = false;
+        String errorFields = "Please enter correct values for following fields: \n";
+        Faker faker = new Faker();
+
+        if (!Utils.isValidText(txtBrand.getText())) {
+            errorFields += "Invalid Brand\n";
+            errorFlag = true;
+        }
+
+        if (!Utils.isValidText(txtModel.getText())) {
+            errorFields += "Invalid Model \n";
+            errorFlag = true;
+        }
+
+        if (!Utils.isValidText(txtColor.getText())) {
+            errorFields += "Invalid Color \n";
+            errorFlag = true;
+        }
+
+        if (!Utils.isValidPrice(txtPrice.getText())) {
+            errorFields += "Invalid Price \n";
+            errorFlag = true;
+        }
+
+        if (!errorFlag) {
+            Car car = this.business.getCarCatalog().addNewCar();
+            car.setBrand(txtBrand.getText());
+            car.setModel(txtModel.getText());
+            car.setColor(txtColor.getText());
+            car.setYearOfManufacture((String) jComboBoxYearOfMfg.getSelectedItem());
+            car.setCity((String) jComboBoxCity.getSelectedItem());
+            car.setSeatNum(Integer.parseInt((String) jComboBoxNoOfSeats.getSelectedItem()));
+            car.setAvailable(jRadioBtnYes.isSelected());
+            car.setPrice(Double.parseDouble(txtPrice.getText()));
+            car.setSerialNum(faker.bothify("1?#ST"));
+
+            for (int certIndex = 0; certIndex < 10; certIndex++) {
+                MaintenanceCertificate cert = new MaintenanceCertificate(Utils.getRandomDate(), LocalDate.now());
+                car.getCertificates().add(cert);
+            }
+            this.business.getCarCatalog().setLastUpdated(LocalDateTime.now());
+
+            JOptionPane.showMessageDialog(this, "New car added successfully with serial number: " +car.getSerialNum() , "FORM SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+            resetFields();
+        } else {
+            System.out.println(errorFields);
+            JOptionPane.showMessageDialog(this, errorFields, "FORM ERROR ", JOptionPane.ERROR_MESSAGE);
+        }
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup btnGroup;
     private javax.swing.JButton btnSave;
+    private javax.swing.JComboBox<String> jComboBoxCity;
+    private javax.swing.JComboBox<String> jComboBoxNoOfSeats;
+    private javax.swing.JComboBox<String> jComboBoxYearOfMfg;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JRadioButton jRadioBtnNo;
+    private javax.swing.JRadioButton jRadioBtnYes;
     private javax.swing.JLabel lblAvavilable;
     private javax.swing.JLabel lblBrand;
     private javax.swing.JLabel lblColor;
-    private javax.swing.JLabel lblModel;
-    private javax.swing.JLabel lblSeatNum;
-    private javax.swing.JLabel lblSeralNum;
+    private javax.swing.JLabel lblSeats;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JLabel lblYearOfManu;
-    private javax.swing.JTextField txtAvailable;
+    private javax.swing.JLabel lblYear;
+    private javax.swing.JLabel lblYear1;
+    private javax.swing.JLabel lblYear2;
+    private javax.swing.JLabel lblmodel;
     private javax.swing.JTextField txtBrand;
     private javax.swing.JTextField txtColor;
     private javax.swing.JTextField txtModel;
-    private javax.swing.JTextField txtSerialNum;
-    private javax.swing.JTextField txtSestlNum;
-    private javax.swing.JTextField txtYearOfManu;
+    private javax.swing.JTextField txtPrice;
     // End of variables declaration//GEN-END:variables
+
+byte[] photo = null;
+String filename = null;
+
 }

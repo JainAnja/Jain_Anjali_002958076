@@ -5,6 +5,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 public class CarCatalog {
 
     private ArrayList<Car> cars;
+    private LocalDateTime lastUpdated;
 
     public CarCatalog() {
         this.cars = new ArrayList();
@@ -27,6 +29,14 @@ public class CarCatalog {
         this.cars = cars;
     }
 
+    public LocalDateTime getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(LocalDateTime lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+
     public Car findFirstAvailableCar() {
         for (Car car : this.cars) {
             if (car.isAvailable()) {
@@ -36,15 +46,15 @@ public class CarCatalog {
         return null;
     }
 
-    public int findCurrentlyAvailableCars() {
-        int count = 0;
+    public ArrayList<Car> findCurrentlyAvailableCars() {
+        ArrayList<Car> result = new ArrayList<>();
         for (Car car : this.cars) {
             if (car.isAvailable()) {
-                count += 1;
+                result.add(car);
             }
 
         }
-        return (count);
+        return result;
 
     }
 
@@ -64,7 +74,7 @@ public class CarCatalog {
 
         ArrayList<Car> result = new ArrayList<>();
         for (Car car : this.cars) {
-            if (car.getYearOfMunufacture().equalsIgnoreCase(input)) {
+            if (car.getYearOfManufacture().equalsIgnoreCase(input)) {
                 result.add(car);
 
             }
@@ -72,8 +82,8 @@ public class CarCatalog {
         return result;
 
     }
-    
-    public ArrayList<Car> findCarBySeat(int min, int max ) {
+
+    public ArrayList<Car> findCarBySeat(int min, int max) {
 
         ArrayList<Car> result = new ArrayList<>();
         for (Car car : this.cars) {
@@ -85,25 +95,62 @@ public class CarCatalog {
         return result;
 
     }
-    
-    
+
     public Car findCarBySerialNum(String input) {
         for (Car car : this.cars) {
-            if(car.getSerialNum().equalsIgnoreCase(input)){
+            if (car.getSerialNum().equalsIgnoreCase(input)) {
                 return car;
             }
         }
         return null;
+
+    }
+
+    public ArrayList<Car> findCarByModelNumber(String input) {
+        ArrayList<Car> result = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getModel().equalsIgnoreCase(input)) {
+                result.add(car);
+            }
+        }
+
+        return result;
+    }
+
+    public ArrayList<Car> findCarByCity(String input) {
+        ArrayList<Car> result = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getCity().equalsIgnoreCase(input)) {
+                result.add(car);
+            }
+        }
+        return result;
+    }
+
+    public ArrayList<Car> findCarsWithExpiredCertificates() {
+        ArrayList<Car> result = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.findExpiredCerts().size() > 1) {
+                result.add(car);
+            }
+        }
+        return result;
     }
     
-    
-    
-    public Car addNewCar(){
+    public ArrayList<String> getCarManufacturersList() {
+        ArrayList<String> result = new ArrayList<>();
+        for (Car car : this.cars) {
+            if(!result.contains(car.getBrand())) {
+                result.add(car.getBrand());
+            }
+        }
+        return result;
+    }
+
+    public Car addNewCar() {
         Car car = new Car();
         cars.add(car);
         return car;
-        }
-    
-    
-    
+    }
+
 }
