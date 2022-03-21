@@ -103,6 +103,13 @@ public class MyHealthPanel extends javax.swing.JPanel {
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
                 {null, null, null}
             },
             new String [] {
@@ -119,25 +126,25 @@ public class MyHealthPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblEncounterHistory);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 670, 160));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 810, 230));
 
         lblBloodPre.setText("Blood Pressure:");
-        jPanel1.add(lblBloodPre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 630, 90, -1));
+        jPanel1.add(lblBloodPre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 90, -1));
 
         lblHeartRate.setText("Heart Rate:");
-        jPanel1.add(lblHeartRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 676, -1, 20));
+        jPanel1.add(lblHeartRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 610, -1, 20));
 
         jLabel4.setText("Body Temperature:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 710, -1, -1));
-        jPanel1.add(txtHeartRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 670, 240, 30));
-        jPanel1.add(txtBoadyTem, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 710, 240, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 670, -1, -1));
+        jPanel1.add(txtHeartRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 600, 240, 30));
+        jPanel1.add(txtBoadyTem, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 660, 240, 30));
 
         txtBloodPre1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBloodPre1ActionPerformed(evt);
             }
         });
-        jPanel1.add(txtBloodPre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 620, 240, 30));
+        jPanel1.add(txtBloodPre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 540, 240, 30));
 
         btnView.setText("View Details");
         btnView.addActionListener(new java.awt.event.ActionListener() {
@@ -145,12 +152,12 @@ public class MyHealthPanel extends javax.swing.JPanel {
                 btnViewActionPerformed(evt);
             }
         });
-        jPanel1.add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, 200, 40));
+        jPanel1.add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 380, 200, 40));
 
         lblVitalDetails.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblVitalDetails.setForeground(new java.awt.Color(51, 0, 255));
         lblVitalDetails.setText("Encounter Details");
-        jPanel1.add(lblVitalDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 560, -1, -1));
+        jPanel1.add(lblVitalDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
         btnProfile.setText("Update Profile");
         btnProfile.addActionListener(new java.awt.event.ActionListener() {
@@ -169,8 +176,8 @@ public class MyHealthPanel extends javax.swing.JPanel {
         jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 200, 40));
 
         jLabel1.setText("Amount paid:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 620, -1, 20));
-        jPanel1.add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 610, 150, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 550, -1, 20));
+        jPanel1.add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 540, 150, 30));
 
         lblName.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         lblName.setForeground(new java.awt.Color(51, 102, 255));
@@ -194,8 +201,8 @@ public class MyHealthPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE)
+                .addGap(40, 40, 40)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

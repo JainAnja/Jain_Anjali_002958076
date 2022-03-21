@@ -282,7 +282,7 @@ public class UpdateMyProfile extends javax.swing.JPanel {
             patient.setfName(txtFirst.getText());
             patient.setlName(txtLast.getText());
             patient.setPhoneNo(txtPhoneNumber.getText());
-
+            patient.setPassword(txtPassword.getText());
             House house = new House(txtAreaStreetAddress.getText(), patient);
             City city = this.hospitalSystem.getCityByName((String)comboxCity.getSelectedItem());
             Community community = city.getCommunityByName((String)comboxCommunity.getSelectedItem());

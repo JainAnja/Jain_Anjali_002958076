@@ -16,8 +16,7 @@ public class PersonDirectory {
     ArrayList<Person> persons;
 
     public PersonDirectory() {
-        this.persons = new ArrayList();
-        
+        this.persons = new ArrayList();   
     }
 
     public ArrayList<Person> getPersons() {
@@ -49,8 +48,7 @@ public class PersonDirectory {
         for(Person person : persons){
             if(person.getUserName().equalsIgnoreCase(userName) && person.getPassword().equalsIgnoreCase(password)){
                 return person;
-            }
-            
+            }        
             
         } return null;
     }
