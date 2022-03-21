@@ -9,34 +9,21 @@ package model;
  * @author Anjali
  */
 public class House {
-    
-    String location;
-    String houseNo;
-    String city;
-    String state;
+    String address;
     Person person;
+    Community community;
 
-    public House() {
-        this.location = location;
-        this.houseNo = houseNo;
-        this.person = person;
-    }
-    
-
-    public String getLocation() {
-        return location;
+    public House(String address, Person person) {
+        this.address = address;
+        this.person = person; 
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public String getAddress() {
+        return address;
     }
 
-    public String getHouseNo() {
-        return houseNo;
-    }
-
-    public void setHouseNo(String houseNo) {
-        this.houseNo = houseNo;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Person getPerson() {
@@ -46,7 +33,12 @@ public class House {
     public void setPerson(Person person) {
         this.person = person;
     }
-    
-    
-    
+
+    public Community getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(Community community) {
+        this.community = community;
+    }   
 }

@@ -12,10 +12,13 @@ import java.util.ArrayList;
  */
 public class Community {
     
+    String name;
     ArrayList<House> houses;
+    City city;
 
-    public Community() {
-        this.houses = houses;
+    public Community(String name) {
+        this.houses = new ArrayList<>();
+        this.name = name;
     }
 
     public ArrayList<House> getHouses() {
@@ -26,10 +29,34 @@ public class Community {
         this.houses = houses;
     }
     
-    public House addNewHouse(){
-        House house = new House();
+    public House addNewHouse(String address, Person person){
+        House house = new House(address, person);
         houses.add(house);
         return house;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    @Override
+    public String toString() {
+        return "" + name ;
+    }
+    
+    
+    
     
 }

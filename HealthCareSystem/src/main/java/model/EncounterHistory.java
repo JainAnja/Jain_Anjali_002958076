@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /*
@@ -15,12 +16,14 @@ public class EncounterHistory {
     
     
     ArrayList<Encounter> encounters;
-    int numOfVisit;
-    ArrayList<MedicalHistory> medicalHistory;
+    
+    public EncounterHistory() {
+        this.encounters = new ArrayList();
+       
+    }
     
     
     
-
     public ArrayList<Encounter> getEncounters() {
         return encounters;
     }
@@ -29,22 +32,12 @@ public class EncounterHistory {
         this.encounters = encounters;
     }
 
-    public int getNumOfVisit() {
-        return numOfVisit;
-    }
-
-    public void setNumOfVisit(int numOfVisit) {
-        this.numOfVisit = numOfVisit;
-    }
-
-    public ArrayList<MedicalHistory> getMedicalHistory() {
-        return medicalHistory;
-    }
-
-    public void setMedicalHistory(ArrayList<MedicalHistory> medicalHistory) {
-        this.medicalHistory = medicalHistory;
-    }
     
+    public Encounter addNewEncounter( LocalDate date, double payment){
+        Encounter enc = new Encounter(date, payment);
+        encounters.add(enc);
+        return enc;
+    }
     
     
     

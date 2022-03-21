@@ -12,33 +12,36 @@ package model;
 public class Person {
     
     
-    String name;
+    String fName;
+    String lName;
     int age;
-    String address;
     String phoneNo;
-
-    public String getName() {
-        return name;
+    House house;
+    String password;
+    String userName;
+    
+    public String getfName() {
+        return fName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
+    
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getPhoneNo() {
@@ -48,8 +51,37 @@ public class Person {
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
     }
+
+    public House getHouse() {
+        return house;
+    }
+
+    public void setHouse(House house) {
+        this.house = house;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Person{" + "fName=" + fName + ", lName=" + lName + '}';
+    }
     
-    
-    
+
     
 }

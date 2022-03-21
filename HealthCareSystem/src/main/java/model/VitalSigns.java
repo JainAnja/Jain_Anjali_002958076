@@ -6,27 +6,35 @@ import java.util.ArrayList;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author Anjali
  */
 public class VitalSigns {
+
     String symptom;
     int bloodPressure;
     int heartRate;
     int temperature;
     String allergy;
-    ArrayList<Encounter> enconters;
-    
+    Encounter encounter;
 
-    public VitalSigns() {
+    public VitalSigns(String symptom, int bloodPressure, int heartRate, int temperature, String allergy, Encounter encounter) {
         this.symptom = symptom;
         this.bloodPressure = bloodPressure;
         this.heartRate = heartRate;
         this.temperature = temperature;
         this.allergy = allergy;
-        this.enconters = new ArrayList<>();
+        this.encounter = encounter;
+    }
+    
+     public VitalSigns( int bloodPressure, int heartRate, int temperature ) {
+        this.symptom = symptom;
+        this.bloodPressure = bloodPressure;
+        this.heartRate = heartRate;
+        this.temperature = temperature;
+        this.allergy = allergy;
+        this.encounter = encounter;
     }
 
     public String getSymptom() {
@@ -69,15 +77,20 @@ public class VitalSigns {
         this.allergy = allergy;
     }
 
-    public ArrayList<Encounter> getEnconters() {
-        return enconters;
+    public Encounter getEncounter() {
+        return encounter;
     }
 
-    public void setEnconters(ArrayList<Encounter> enconters) {
-        this.enconters = enconters;
+    public void setEncounter(Encounter encounter) {
+        this.encounter = encounter;
+    }
+
+    @Override
+    public String toString() {
+        return  "bloodPressure=" + bloodPressure + ", heartRate=" + heartRate + ", temperature=" + temperature ;
     }
     
     
     
-    
+
 }

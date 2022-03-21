@@ -19,6 +19,14 @@ public class PersonDirectory {
         this.persons = new ArrayList();
         
     }
+
+    public ArrayList<Person> getPersons() {
+        return persons;
+    }
+
+    public void setPersons(ArrayList<Person> persons) {
+        this.persons = persons;
+    }
     
     
     public Person addNewPerson(){
@@ -26,9 +34,26 @@ public class PersonDirectory {
         persons.add(person);
         return person;
         
+        
     }
     
     
+    public void printPerson(){
+        for (Person person: persons){
+            System.out.println(person.getfName()+person.getlName()+ person.getAge() + person.getPhoneNo());
+            
+        }
+    }
+    
+    public Person authenticateUser(String userName, String password){
+        for(Person person : persons){
+            if(person.getUserName().equalsIgnoreCase(userName) && person.getPassword().equalsIgnoreCase(password)){
+                return person;
+            }
+            
+            
+        } return null;
+    }
+}    
     
     
-}

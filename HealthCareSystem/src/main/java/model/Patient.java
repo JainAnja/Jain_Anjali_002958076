@@ -6,44 +6,64 @@ import java.util.ArrayList;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author Anjali
  */
-public class Patient {
-    
-    
-    ArrayList<EncounterHistory> encounterHistory;
-    Person person;
-  
+public class Patient extends Person {
+
+    EncounterHistory encounterHistory;
+    static int count;
+    int patienId;
+    String insuranceGroup;
+    String memberId;
 
     public Patient() {
-        this.encounterHistory = encounterHistory;
-        this.person = person;
-        
+        this.encounterHistory = new EncounterHistory();
+        this.count = count+1;
+        this.patienId = count;
+
     }
 
-    public ArrayList<EncounterHistory> getEncounterHistory() {
+    public EncounterHistory getEncounterHistory() {
         return encounterHistory;
     }
 
-    public void setEncounterHistory(ArrayList<EncounterHistory> encounterHistory) {
+    public void setEncounterHistory(EncounterHistory encounterHistory) {
         this.encounterHistory = encounterHistory;
     }
 
-    public Person getPerson() {
-        return person;
+    public int getPatienId() {
+        return patienId;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setPatienId(int patienId) {
+        this.patienId = patienId;
     }
 
-   
-    
-    
+    public String getInsuranceGroup() {
+        return insuranceGroup;
+    }
+
+    public void setInsuranceGroup(String insuranceGroup) {
+        this.insuranceGroup = insuranceGroup;
+    }
+
+    public String getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
+    }
 
     
     
+    @Override
+    public String toString() {
+        return this.fName +" "+ this.lName ;
+    }
+    
+    
+
 }
